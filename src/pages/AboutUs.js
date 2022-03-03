@@ -3,7 +3,7 @@ import "./AboutUs.css";
 
 const AboutUs = () => {
   return (
-    <main class="content-about">
+    <main className="content-about">
       <span className="about">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever

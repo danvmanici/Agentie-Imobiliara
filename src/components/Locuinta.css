@@ -1,0 +1,17 @@
+.locuinta {
+  width: 40rem;
+  height: 15rem;
+}
+
+.locuinta img {
+  display: inline-block;
+  width: 15rem;
+  height: 10rem;
+}
+
+.locuinta span {
+  display: inline-block;
+  width: 15rem;
+  word-wrap: normal;
+  text-align: justify;
+}

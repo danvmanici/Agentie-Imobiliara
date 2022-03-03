@@ -4,9 +4,9 @@ import "./ContactForm.css";
 const ContactForm = () => {
   return (
     <main>
-      <fieldset class="field">
+      <fieldset className="field">
         <legend>Contact Us</legend>
-        <form class="content-field">
+        <form className="content-field">
           <section>
             <h4>
               <label for="name">Name</label>

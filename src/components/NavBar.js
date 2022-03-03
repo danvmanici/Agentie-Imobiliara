@@ -4,14 +4,14 @@ import "./NavBar.css";
 const NavBar = () => {
   return (
     <>
-      <nav class="navbar">
-        <div class="logo">
+      <nav className="navbar">
+        <div className="logo">
           <a href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 192.756 192.756"
             >
-              <g fill-rule="evenodd" clip-rule="evenodd">
+              <g fillRule="evenodd" clipRule="evenodd">
                 <path fill="#fff" d="M0 0h192.756v192.756H0V0z" />
                 <path
                   d="M34.699 154.719s7.145-15.717 14.289-18.098c7.145-2.383-9.525 2.857-9.525 2.857s10.478-18.574 42.389-24.768C66.61 109.949 67.087 99.947 70.42 93.279c-3.81 0-8.573 1.429-10.478 2.381s6.668-10.479 24.291-10.479c3.81-.952-8.573-3.334-11.907-3.334 9.525-2.381 22.861-2.857 26.672-1.905 1.904-6.668 5.238-10.954 6.191-12.859.953-1.905 4.287-7.145 13.812-4.287s12.859 4.763 12.859 4.763 6.082 15.718 28.102 20.004c-7.146-6.192-20.957-12.86-20.957-24.291-11.908-6.668-32.387-12.383-35.246-12.383 2.383-.953 2.857 0 3.811-2.382.953-2.381 1.906-22.861-2.381-27.624-2.857 11.431-5.715 15.717-8.573 19.527 0-4.287 1.429-18.575-4.763-22.861-6.668 15.241-9.959 17.104-16.67 23.814-5.239 5.239-9.049 12.383-9.525 13.812-7.144 1.429-26.672 7.145-39.531 18.099 1.905 0 5.715-2.857 6.668-.476-2.381 1.905-8.573 7.621-12.86 11.431-4.287 3.81-10.955 18.575-11.431 21.432 3.334-.951 4.763-.477 8.097-2.381-1.539 6.193-6.597 30.484 18.098 51.439z"
@@ -29,7 +29,7 @@ const NavBar = () => {
             </svg>
           </a>
         </div>
-        <div class="main-navbar">
+        <div className="main-navbar">
           <ul>
             <li>
               <a href="/">Home</a>
@@ -42,10 +42,10 @@ const NavBar = () => {
             </li>
             <li>
               <a href="/rents">Rents&#9660;</a>
-              <ul class="dropdown">
+              <ul className="dropdown">
                 <li>
                   <a href="/rents#rezidential">Residential &#9658;</a>
-                  <ul class="dropdown right-menu">
+                  <ul className="dropdown right-menu">
                     <li>
                       <a href="/rents#garsonierarezidential">Garsoniera</a>
                     </li>
@@ -59,7 +59,7 @@ const NavBar = () => {
                 </li>
                 <li>
                   <a href="/rents#comercial">Commercial &#9658;</a>
-                  <ul class="dropdown right-menu">
+                  <ul className="dropdown right-menu">
                     <li>
                       <a href="/rents#garsonieracomerial">Garsoniera</a>
                     </li>
@@ -75,10 +75,10 @@ const NavBar = () => {
             </li>
             <li>
               <a href="/sells">Sells&#9660;</a>
-              <ul class="dropdown">
+              <ul className="dropdown">
                 <li>
                   <a href="/sells#rezidential">Residential &#9658;</a>
-                  <ul class="dropdown right-menu">
+                  <ul className="dropdown right-menu">
                     <li>
                       <a href="/sells#garsonierarezidential">Garsoniera</a>
                     </li>
@@ -92,7 +92,7 @@ const NavBar = () => {
                 </li>
                 <li>
                   <a href="/sells#comercial">Commercial &#9658;</a>
-                  <ul class="dropdown right-menu">
+                  <ul className="dropdown right-menu">
                     <li>
                       <a href="/sells#garsonieracomerial">Garsoniera</a>
                     </li>
