@@ -6,89 +6,89 @@ const NavBar = () => {
     <>
       <nav class="navbar">
         <div class="logo">
-          <a href="/Home.html">
-            <img src="./icons/logo.svg" alt="logo" />
+          <a href="/">
+            <img src={require("../icons/background.jpg")} alt="logo" />
           </a>
         </div>
         <div class="main-navbar">
           <ul>
             <li>
-              <a href="/Home.html">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="/News.html">News</a>
+              <a href="/news">News</a>
             </li>
             <li>
-              <a href="/Aboutus.html">AboutUs</a>
+              <a href="/about-us">AboutUs</a>
             </li>
             <li>
-              <a href="/Rents.html">Rents&#9660;</a>
+              <a href="/rents">Rents&#9660;</a>
               <ul class="dropdown">
                 <li>
-                  <a href="/Rents.html#rezidential">Residential &#9658;</a>
+                  <a href="/rents#rezidential">Residential &#9658;</a>
                   <ul class="dropdown right-menu">
                     <li>
-                      <a href="/Rents.html#garsonierarezidential">Garsoniera</a>
+                      <a href="/rents#garsonierarezidential">Garsoniera</a>
                     </li>
                     <li>
-                      <a href="/Rents.html#apartmentrezidential">Apartment</a>
+                      <a href="/rents#apartmentrezidential">Apartment</a>
                     </li>
                     <li>
-                      <a href="/Rents.html#houserezidential">House</a>
+                      <a href="/rents#houserezidential">House</a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="/Rents.html#comercial">Commercial &#9658;</a>
+                  <a href="/rents#comercial">Commercial &#9658;</a>
                   <ul class="dropdown right-menu">
                     <li>
-                      <a href="/Rents.html#garsonieracomerial">Garsoniera</a>
+                      <a href="/rents#garsonieracomerial">Garsoniera</a>
                     </li>
                     <li>
-                      <a href="/Rents.html#apartmentcomerial">Apartment</a>
+                      <a href="/rents#apartmentcomerial">Apartment</a>
                     </li>
                     <li>
-                      <a href="/Rents.html#housecomerial">House</a>
+                      <a href="/rents#housecomerial">House</a>
                     </li>
                   </ul>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/Sells.html">Sells&#9660;</a>
+              <a href="/sells">Sells&#9660;</a>
               <ul class="dropdown">
                 <li>
-                  <a href="/Sells.html#rezidential">Residential &#9658;</a>
+                  <a href="/sells#rezidential">Residential &#9658;</a>
                   <ul class="dropdown right-menu">
                     <li>
-                      <a href="/Sells.html#garsonierarezidential">Garsoniera</a>
+                      <a href="/sells#garsonierarezidential">Garsoniera</a>
                     </li>
                     <li>
-                      <a href="/Sells.html#apartmentrezidential">Apartment</a>
+                      <a href="/sells#apartmentrezidential">Apartment</a>
                     </li>
                     <li>
-                      <a href="/Sells.html#houserezidential">House</a>
+                      <a href="/sells#houserezidential">House</a>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <a href="/Sells.html#comercial">Commercial &#9658;</a>
+                  <a href="/sells#comercial">Commercial &#9658;</a>
                   <ul class="dropdown right-menu">
                     <li>
-                      <a href="/Sells.html#garsonieracomerial">Garsoniera</a>
+                      <a href="/sells#garsonieracomerial">Garsoniera</a>
                     </li>
                     <li>
-                      <a href="/Sells.html#apartmentcomerial">Apartment</a>
+                      <a href="/sells#apartmentcomerial">Apartment</a>
                     </li>
                     <li>
-                      <a href="/Sells.html#housecomerial">House</a>
+                      <a href="/sells#housecomerial">House</a>
                     </li>
                   </ul>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/Contact.html">Contact</a>
+              <a href="/contact">Contact</a>
             </li>
           </ul>
         </div>

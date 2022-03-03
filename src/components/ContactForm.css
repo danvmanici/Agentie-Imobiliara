@@ -1,0 +1,34 @@
+.field {
+  margin: 5rem auto;
+  width: 50%;
+}
+
+.content-field {
+  margin-top: 2rem;
+  width: 80%;
+}
+
+.content-field > * {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-field > textarea {
+  width: 100%;
+  height: 10rem;
+}
+
+input {
+  padding: 0.25rem;
+}
+
+.content-field > input {
+  display: flex;
+}
+
+.content-field > section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}

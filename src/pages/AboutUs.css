@@ -1,0 +1,23 @@
+.content-about {
+  display: flex;
+  margin: 2rem auto;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: flex-start;
+}
+
+.about {
+  width: 70%;
+  height: 700px;
+  margin: 0rem 2rem;
+  text-align: justify;
+  white-space: normal;
+  padding: 2rem;
+  border: 1px solid black;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+.about-video {
+  width: 90%;
+  height: 350px;
+}
