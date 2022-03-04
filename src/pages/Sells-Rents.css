@@ -28,16 +28,3 @@
 .content-type section {
   margin: 2rem 0;
 }
-
-.content-type img {
-  display: inline-block;
-  width: 15rem;
-  height: 10rem;
-}
-
-.content-type span {
-  display: inline-block;
-  width: 15rem;
-  word-wrap: normal;
-  text-align: justify;
-}
