@@ -1,9 +1,20 @@
-.content-news {
-  margin: 10rem auto;
-  display: flex;
-  text-transform: uppercase;
+.news-h3 {
+  margin: 1rem auto;
   color: aquamarine;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  text-decoration: solid;
-  font-size: xx-large;
+}
+
+.news-article {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.news-section {
+  margin: 3rem auto;
+  padding: 1rem 2rem;
+  width: 50rem;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 }
