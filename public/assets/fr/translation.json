@@ -1,3 +1,22 @@
 {
-  "aboutUs": "Nous proposons des prestations complexes de conseil immobilier : promotion de l'offre dans la presse, sur des sites spécialisés et sur le site internet de l'agence, assistance et conseil en vente/location, préparation de contrats, aide à l'obtention de crédits immobiliers, assistance et conseils juridiques, assistance et conseil financier, analyse et conseil aux investisseurs."
+  "aboutUs": "Nous proposons des prestations complexes de conseil immobilier : promotion de l'offre dans la presse, sur des sites spécialisés et sur le site internet de l'agence, assistance et conseil en vente/location, préparation de contrats, aide à l'obtention de crédits immobiliers, assistance et conseils juridiques, assistance et conseil financier, analyse et conseil aux investisseurs.",
+  "home": "La maison",
+  "news": "Nouvelles",
+  "about-us": "À propos de nous",
+  "rents": "De location",
+  "residential": "Résidentiel",
+  "garsoniera": "Chambre simple",
+  "apartment": "Appartement",
+  "house": "loger",
+  "comercial": "Commercial",
+  "sells": "Vendre",
+  "contact": "Contact",
+  "description": "Selgros Area Studio Il est livré avec toutes les finitions, y compris la chaudière à gaz Romstal.",
+  "contact-us": "Contactez-nous",
+  "name": "Nom",
+  "placeholder-name": "nom...",
+  "email": "Email",
+  "placeholder-email": "email...",
+  "placeholder-subject": "Ecrire ici ...",
+  "submit": "Envoyer"
 }

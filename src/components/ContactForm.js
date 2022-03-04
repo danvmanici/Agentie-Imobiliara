@@ -10,9 +10,7 @@ const ContactForm = () => {
         <legend>{t("contact-us")}</legend>
         <form className="content-field">
           <section>
-            <h4>
-              <label for="name">{t("name")}</label>
-            </h4>
+            <label for="name">{t("name")}:</label>
             <input
               type="text"
               id="name"
@@ -22,9 +20,7 @@ const ContactForm = () => {
             />
           </section>
           <section>
-            <h4>
-              <label for="email">{t("email")}</label>
-            </h4>
+            <label for="email">{t("email")}:</label>
             <input
               type="email"
               id="email"
@@ -38,8 +34,9 @@ const ContactForm = () => {
             id="subject"
             name="subject"
             placeholder={t("placeholder-subject")}
+            required
           ></textarea>
-          <input type="submit" value={t("submit")} />
+          <input type="submit" value={t("submit")} className="send-button" />
         </form>
       </fieldset>
     </main>

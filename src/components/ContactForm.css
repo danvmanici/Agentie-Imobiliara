@@ -1,6 +1,10 @@
 .field {
   margin: 5rem auto;
   width: 50%;
+  background-color: rgb(218, 210, 210);
+  color: black;
+  border: aquamarine 2px solid;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 }
 
 .content-field {
@@ -16,10 +20,12 @@
 .content-field > textarea {
   width: 100%;
   height: 10rem;
+  border-color: aquamarine;
 }
 
 input {
   padding: 0.25rem;
+  border-color: aquamarine;
 }
 
 .content-field > input {
@@ -30,5 +36,16 @@ input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+.send-button {
+  background-color: aquamarine;
+  color: black;
+  border-color: white;
+  padding: 0.5rem 3rem;
+}
+
+legend {
+  border-color: aquamarine;
 }
