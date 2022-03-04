@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
@@ -30,15 +30,14 @@ i18n
       caches: ["cookie"],
     },
     backend: { loadPath: "/assets/{{lng}}/translation.json" },
-    react: {
-      useSuspense: false,
-    },
   });
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Suspense fallback="">
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Suspense>,
   document.getElementById("root")
 );
 

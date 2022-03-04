@@ -61,11 +61,22 @@
 }
 
 .dropdown.right-menu {
-  margin-left: 7rem;
+  margin-left: 6.3rem;
   padding-top: 0rem;
   margin-top: -2rem;
 }
 
 .navbar > div > a > svg {
   width: 3rem;
+}
+
+.btn-black {
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-black:hover {
+  color: aquamarine;
 }

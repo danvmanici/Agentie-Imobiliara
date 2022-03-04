@@ -1,11 +1,12 @@
 import React from "react";
 import "./AboutUs.css";
-import { aboustUs } from "../components/Write.js";
+import { useTranslation } from "react-i18next";
 
 const AboutUs = () => {
+  const { t } = useTranslation();
   return (
     <main className="content-about">
-      <span className="about">{aboustUs}</span>
+      <span className="about">{t("aboutUs")}</span>
       <aside>
         <iframe
           src="https://www.youtube.com/embed/jtxnq6Rn0R4"

@@ -1,3 +1,22 @@
 {
-  "welcome": "Welcome to React and react-i18next"
+  "aboutUs": "We offer complex real estate consulting services: promotion of the offer in the press, on specialized sites and on the agency's website, assistance and consultant in sale / rental, preparation of contracts, assistance in obtaining real estate loans, legal assistance and advice, assistance and financial consulting, analysis and business consulting for investors.",
+  "home": "Home",
+  "news": "News",
+  "about-us": "AboutUs",
+  "rents": "Rents",
+  "residential": "Residetial",
+  "garsoniera": "Studio",
+  "apartment": "Apartment",
+  "house": "House",
+  "comercial": "Comercial",
+  "sells": "Sells",
+  "contact": "Contact",
+  "description": "Selgros Area Studio It is delivered with all finishes including Romstal Gas Boiler.",
+  "contact-us": "Contact Us",
+  "name": "Name",
+  "placeholder-name": "name...",
+  "email": "Email",
+  "placeholder-email": "email...",
+  "placeholder-subject": "Write some text here...",
+  "submit": "Submit"
 }
