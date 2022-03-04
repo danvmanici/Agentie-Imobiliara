@@ -1,13 +1,9 @@
 import React from "react";
 import "./Sells-Rents.css";
 import Locuinta from "../components/Locuinta";
-import { useState } from "react";
-import { image as im, description as descript } from "../components/Write.js";
+import { image, description } from "../components/Write.js";
 
 const Sells = () => {
-  const [image] = useState(im);
-  const [description] = useState(descript);
-
   return (
     <>
       <main className="content-main">
