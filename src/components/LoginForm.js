@@ -10,6 +10,8 @@ const LoginForm = () => {
     //   email: email,
     //   password: password,
     // });
+    window.location.href = "/user";
+
     console.log(email, password);
   };
 

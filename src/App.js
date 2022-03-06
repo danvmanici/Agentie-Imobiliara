@@ -7,6 +7,7 @@ import Sells from "./pages/Sells";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import User from "./pages/User";
 import ErrorPage from "./pages/ErrorPage";
 import NavBar from "./components/NavBar";
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
+          <Route path="/user" element={<User />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
       </Router>
