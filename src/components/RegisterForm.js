@@ -1,18 +1,39 @@
 import React, { useState } from "react";
 import "./RegisterForm.css";
+import axios from "axios";
 
 const RegisterForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [select, setSelect] = useState("client");
 
   const handleSubmit = async () => {
-    // await axios.post("http://127.0.0.1:8000/register/", {
-    //   name: name,
-    //   email: email,
-    //   password: password,
-    // });
-    console.log(name, email, password);
+    // await axios.post(
+    //   "http://127.0.0.1:8000/register/",
+    //   {
+    //     name: name,
+    //     email: email,
+    //     password: password,
+    //   },
+    //   {
+    //     headers: {
+    //       "x-csrf-token": document.querySelector("#csrf"),
+    //     },
+    //   }
+    // );
+    await axios.get(
+      `http://127.0.0.1:8000/register/${name}/${email}/${password}/${select}`,
+      {
+        params: {
+          name: name,
+          email: email,
+          password: password,
+          role: select,
+        },
+      }
+    );
+    console.log(name, email, password, select);
   };
 
   return (
@@ -47,7 +68,6 @@ const RegisterForm = () => {
                           </label>
                         </div>
                       </div>
-
                       <div className="d-flex flex-row align-items-center mb-4">
                         <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div className="form-outline flex-fill mb-0">
@@ -66,7 +86,6 @@ const RegisterForm = () => {
                           </label>
                         </div>
                       </div>
-
                       <div className="d-flex flex-row align-items-center mb-4">
                         <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                         <div className="form-outline flex-fill mb-0">
@@ -86,28 +105,25 @@ const RegisterForm = () => {
                         </div>
                       </div>
 
-                      {/* <div className="d-flex flex-row align-items-center mb-4">
-                        <i className="fas fa-key fa-lg me-3 fa-fw"></i>
-                        <div className="form-outline flex-fill mb-0">
-                          <input
-                            type="password"
-                            id="form3Example4cd"
-                            className="form-control"
-                          />
-                          <label
-                            className="form-label"
-                            htmlFor="form3Example4cd"
-                          >
-                            Repeat your password
-                          </label>
-                        </div>
-                      </div> */}
+                      <div className="d-flex justify-content-around align-items-center mb-4">
+                        <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <select
+                          className="form-select form-select-lg mb-3"
+                          aria-label=".form-select-lg example"
+                          value={select}
+                          onChange={(e) => setSelect(() => e.target.value)}
+                        >
+                          <option default value="client">
+                            Client
+                          </option>
+                          <option value="agent">Agent Imobiliar</option>
+                        </select>
+                      </div>
 
                       <div className="d-flex justify-content-around align-items-center mb-4">
                         <span>Already have an account?</span>
                         <a href="/login">Sing In!</a>
                       </div>
-
                       <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button
                           type="button"

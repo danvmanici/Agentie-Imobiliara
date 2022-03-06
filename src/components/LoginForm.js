@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
+import axios from "axios";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -10,8 +11,19 @@ const LoginForm = () => {
     //   email: email,
     //   password: password,
     // });
-    window.location.href = "/user";
-
+    const res = await axios.get(
+      `http://127.0.0.1:8000/register/${email}/${password}`,
+      {
+        params: {
+          email: email,
+          password: password,
+        },
+      }
+    );
+    console.log(res.data);
+    if (res.data === "ok") {
+      window.location.href = "/user";
+    }
     console.log(email, password);
   };
 
