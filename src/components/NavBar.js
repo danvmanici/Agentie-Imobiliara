@@ -148,6 +148,12 @@ const NavBar = () => {
               <a href="/contact">{t("contact")}</a>
             </li>
             <li>
+              <a href="/login">Login</a>
+            </li>
+            <li>
+              <a href="/register">Register</a>
+            </li>
+            <li>
               <GlobeIcon />
 
               <ul className="dropdown">

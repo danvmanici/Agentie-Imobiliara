@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ContactForm.css";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
+// import axios from "axios";
 
 const ContactForm = () => {
   const { t } = useTranslation();
@@ -23,8 +23,8 @@ const ContactForm = () => {
 
   return (
     <main>
-      <fieldset className="field">
-        <legend>{t("contact-us")}</legend>
+      <fieldset className="fields">
+        <legend className="leg">{t("contact-us")}</legend>
         <form className="content-field">
           <section>
             <label htmlFor="name">{t("name")}:</label>

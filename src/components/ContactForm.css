@@ -1,4 +1,4 @@
-.field {
+.fields {
   margin: 5rem auto;
   width: 50%;
   background-color: rgb(218, 210, 210);
@@ -8,6 +8,10 @@
 }
 
 .content-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-between;
   margin-top: 2rem;
   width: 80%;
 }
@@ -28,6 +32,10 @@ input {
   border-color: aquamarine;
 }
 
+label {
+  padding-right: 2rem;
+}
+
 .content-field > input {
   display: flex;
 }
@@ -36,7 +44,7 @@ input {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .send-button {
@@ -46,6 +54,7 @@ input {
   padding: 0.5rem 3rem;
 }
 
-legend {
+.leg {
   border-color: aquamarine;
+  padding-left: 40%;
 }

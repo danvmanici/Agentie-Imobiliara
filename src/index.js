@@ -7,6 +7,7 @@ import HttpApi from "i18next-http-backend";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.css";
 
 // eslint-disable-next-line no-undef
 i18n
