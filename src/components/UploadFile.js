@@ -2,6 +2,15 @@ import React from "react";
 import "./UploadFile.css";
 
 const UploadFile = () => {
+  const handleFileLoad = (e) => {
+    let file = e.target.files;
+    let reader = new FileReader();
+    reader.readAsDataURL(file[0]);
+    reader.onload = (e) => {
+      console.log(e.target.result);
+    };
+  };
+
   return (
     <section className="upload">
       <form className="upload-form">
@@ -23,6 +32,7 @@ const UploadFile = () => {
               className="form-control form-control-lg"
               id="formFileLg"
               type="file"
+              onChange={(e) => handleFileLoad(e)}
             />
           </div>
         </div>

@@ -33,6 +33,9 @@ const User = () => {
         },
       }
     );
+    sessionStorage.removeItem("isLoggedIn");
+    sessionStorage.removeItem("user");
+    window.location.href = "/login";
     console.log(
       name,
       email,
