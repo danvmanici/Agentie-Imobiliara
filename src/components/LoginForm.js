@@ -21,7 +21,9 @@ const LoginForm = () => {
       }
     );
     console.log(res.data);
-    if (res.data === "ok") {
+    if (!!res.data) {
+      sessionStorage.setItem("user", JSON.stringify(res.data));
+      sessionStorage.setItem("isLoggedIn", true);
       window.location.href = "/user";
     }
     console.log(email, password);

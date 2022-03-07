@@ -36,6 +36,40 @@ const GlobeIcon = ({ width = 24, height = 24, fill = "white" }) => (
 
 const NavBar = () => {
   const { t } = useTranslation();
+
+  const logOut = () => {
+    sessionStorage.removeItem("isLoggedIn");
+    sessionStorage.removeItem("user");
+  };
+
+  const checkLogin = () => {
+    let isLoggedIn = sessionStorage.getItem("isLoggedIn");
+    if (isLoggedIn) {
+      return (
+        <>
+          <li>
+            <a href="/" onClick={logOut}>
+              Logout
+            </a>
+          </li>
+          <li>
+            <a href="/user">Account</a>
+          </li>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <li>
+            <a href="/login">Login</a>
+          </li>
+          <li>
+            <a href="/register">Register</a>
+          </li>
+        </>
+      );
+    }
+  };
   return (
     <>
       <nav className="navbar">
@@ -147,12 +181,8 @@ const NavBar = () => {
             <li>
               <a href="/contact">{t("contact")}</a>
             </li>
-            <li>
-              <a href="/login">Login</a>
-            </li>
-            <li>
-              <a href="/register">Register</a>
-            </li>
+            {checkLogin()}
+
             <li>
               <GlobeIcon />
 
