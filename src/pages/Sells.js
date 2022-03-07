@@ -25,23 +25,21 @@ const Sells = () => {
 
   const helper = () => {
     return (
-      <div className="nnn">
-        <form className="my-form">
-          <label htmlFor="pret">Pret:</label>
-          <br />
-          <input type="text" id="pret" name="pret" defaultValue={mypret} />
-          <label htmlFor="adresa">Adresa:</label>
-          <br />
-          <input type="text" id="adresa" name="adresa" defaultValue={myadres} />
-          <label htmlFor="meeting-time">Alege data si ora:</label>
-          <input
-            type="datetime-local"
-            id="meeting-time"
-            name="meeting-time"
-          ></input>
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
+      <form className="my-form">
+        <label htmlFor="pret">Pret:</label>
+        <br />
+        <input type="text" id="pret" name="pret" defaultValue={mypret} />
+        <label htmlFor="adresa">Adresa:</label>
+        <br />
+        <input type="text" id="adresa" name="adresa" defaultValue={myadres} />
+        <label htmlFor="meeting-time">Alege data si ora:</label>
+        <input
+          type="datetime-local"
+          id="meeting-time"
+          name="meeting-time"
+        ></input>
+        <input type="submit" value="Submit" />
+      </form>
     );
   };
 
