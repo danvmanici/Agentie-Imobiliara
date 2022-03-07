@@ -14,6 +14,7 @@
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-edit-text": "^4.3.0",
     "react-i18next": "^11.15.5",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
@@ -48,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-edit-text": "^4.3.0",
     "css": "^3.0.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-prettier": "^4.0.0",

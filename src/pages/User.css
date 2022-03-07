@@ -1,10 +1,26 @@
 .name-email {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  color: aquamarine;
+  color: rgb(0, 217, 255);
   font-family: Helvetica, sans-serif;
   font-size: 1.5rem;
   text-shadow: 1px 1px;
+}
+
+.multiselect {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.rezidential-comercial {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.button-save {
+  margin-top: 1rem;
 }
