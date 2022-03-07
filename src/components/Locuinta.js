@@ -2,11 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Locuinta.css";
 
-const Locuinta = ({ image, description }) => {
+const Locuinta = ({ image, description, selectLocuinta, adresa, pret }) => {
   return (
-    <div className="locuinta">
+    <div className="locuinta" onClick={selectLocuinta}>
       <img src={image} alt="garsoniera1" />
-      <span>{description}</span>
+      <span>
+        <span>{pret}&euro;</span>
+        <span>{adresa}</span>
+        <span>{description}</span>
+      </span>
     </div>
   );
 };
@@ -14,6 +18,7 @@ const Locuinta = ({ image, description }) => {
 Locuinta.propTypes = {
   image: PropTypes.string,
   description: PropTypes.string,
+  selectLocuinta: PropTypes.func,
 };
 
 export default Locuinta;

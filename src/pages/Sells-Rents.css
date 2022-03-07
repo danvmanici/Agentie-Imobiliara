@@ -28,3 +28,11 @@
 .content-type section {
   margin: 2rem 0;
 }
+
+.nnn {
+  position: relative;
+}
+
+.my-form {
+  position: absolute;
+}
