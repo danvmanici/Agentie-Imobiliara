@@ -1,20 +1,38 @@
 import React, { useState } from "react";
 import UploadFile from "../components/UploadFile";
 import "./User.css";
+import axios from "axios";
 
 const User = () => {
   let data = sessionStorage.getItem("user");
   data = JSON.parse(data);
+  const id = data.id;
   const [name, setName] = useState(data.name);
   const [email, setEmail] = useState(data.email);
-  const [rgarsoniera, setRGarsoniera] = useState(false);
-  const [rapartament, setRapartament] = useState(false);
-  const [rcasa, setRcasa] = useState(false);
-  const [cgarsoniera, setCGarsoniera] = useState(false);
-  const [capartament, setCapartament] = useState(false);
-  const [ccasa, setCcasa] = useState(false);
+  const [rgarsoniera, setRGarsoniera] = useState(data.rgarsoniera);
+  const [rapartament, setRapartament] = useState(data.rapartament);
+  const [rcasa, setRcasa] = useState(data.rcasa);
+  const [cgarsoniera, setCGarsoniera] = useState(data.cgarsoniera);
+  const [capartament, setCapartament] = useState(data.capartament);
+  const [ccasa, setCcasa] = useState(data.ccasa);
 
-  const handleSave = () => {
+  const handleSave = async () => {
+    await axios.get(
+      `http://127.0.0.1:8000/register/${id}/${name}/${email}/${rgarsoniera}/${rapartament}/${rcasa}/${cgarsoniera}/${capartament}/${ccasa}`,
+      {
+        params: {
+          id: id,
+          name: name,
+          email: email,
+          rgarsoniera: rgarsoniera,
+          rapartament: rapartament,
+          rcasa: rcasa,
+          cgarsoniera: cgarsoniera,
+          capartament: capartament,
+          ccasa: ccasa,
+        },
+      }
+    );
     console.log(
       name,
       email,
@@ -75,7 +93,7 @@ const User = () => {
                                   value="on"
                                   checked={rgarsoniera}
                                   onChange={() =>
-                                    setRGarsoniera(() => !rgarsoniera)
+                                    setRGarsoniera(() => Number(!rgarsoniera))
                                   }
                                 />
                                 <label htmlFor="rgarsoniera">Garsoniera</label>
@@ -88,7 +106,7 @@ const User = () => {
                                   value="on"
                                   checked={rapartament}
                                   onChange={() =>
-                                    setRapartament(() => !rapartament)
+                                    setRapartament(() => Number(!rapartament))
                                   }
                                 />
                                 <label htmlFor="raapartament">Apartament</label>
@@ -100,7 +118,9 @@ const User = () => {
                                   id="rcasa"
                                   value="on"
                                   checked={rcasa}
-                                  onChange={() => setRcasa(() => !rcasa)}
+                                  onChange={() =>
+                                    setRcasa(() => Number(!rcasa))
+                                  }
                                 />
                                 <label htmlFor="rcasa">Casa</label>
                               </span>
@@ -117,7 +137,7 @@ const User = () => {
                                   value="on"
                                   checked={cgarsoniera}
                                   onChange={() =>
-                                    setCGarsoniera(() => !cgarsoniera)
+                                    setCGarsoniera(() => Number(!cgarsoniera))
                                   }
                                 />
                                 <label htmlFor="cgarsoniera">Garsoniera</label>
@@ -130,7 +150,7 @@ const User = () => {
                                   value="on"
                                   checked={capartament}
                                   onChange={() =>
-                                    setCapartament(() => !capartament)
+                                    setCapartament(() => Number(!capartament))
                                   }
                                 />
                                 <label htmlFor="capartament">Apartament</label>
@@ -142,7 +162,9 @@ const User = () => {
                                   id="ccasa"
                                   value="on"
                                   checked={ccasa}
-                                  onChange={() => setCcasa(() => !ccasa)}
+                                  onChange={() =>
+                                    setCcasa(() => Number(!ccasa))
+                                  }
                                 />
                                 <label htmlFor="ccasa">Casa</label>
                               </span>
