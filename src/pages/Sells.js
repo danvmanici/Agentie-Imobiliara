@@ -96,9 +96,10 @@ const Sells = () => {
               adresa={adresa[0]}
             />
             <Locuinta
+              id={id[1]}
               image={image}
               description={description}
-              selectLocuinta={() => selectLocuinta(pret[1], adresa[1])}
+              selectLocuinta={() => selectLocuinta(pret[1], adresa[1], id[1])}
               pret={pret[1]}
               adresa={adresa[1]}
             />
@@ -106,9 +107,10 @@ const Sells = () => {
           <section id="apartmentrezidential">
             <h3>{t("apartment")}</h3>
             <Locuinta
+              id={id[2]}
               image={image}
               description={description}
-              selectLocuinta={() => selectLocuinta(pret[2], adresa[2])}
+              selectLocuinta={() => selectLocuinta(pret[2], adresa[2], id[2])}
               pret={pret[2]}
               adresa={adresa[2]}
             />
@@ -116,9 +118,10 @@ const Sells = () => {
           <section id="houserezidential">
             <h3>{t("house")}</h3>
             <Locuinta
+              id={id[3]}
               image={image}
               description={description}
-              selectLocuinta={() => selectLocuinta(pret[3], adresa[3])}
+              selectLocuinta={() => selectLocuinta(pret[3], adresa[3], id[3])}
               pret={pret[3]}
               adresa={adresa[3]}
             />
@@ -129,9 +132,10 @@ const Sells = () => {
           <section id="garsonieracomerial">
             <h3> {t("garsoniera")}</h3>
             <Locuinta
+              id={id[4]}
               image={image}
               description={description}
-              selectLocuinta={() => selectLocuinta(pret[4], adresa[4])}
+              selectLocuinta={() => selectLocuinta(pret[4], adresa[4], id[4])}
               pret={pret[4]}
               adresa={adresa[4]}
             />
@@ -139,9 +143,10 @@ const Sells = () => {
           <section id="apartmentcomerial">
             <h3>{t("apartment")}</h3>
             <Locuinta
+              id={id[5]}
               image={image}
               description={description}
-              selectLocuinta={() => selectLocuinta(pret[5], adresa[5])}
+              selectLocuinta={() => selectLocuinta(pret[5], adresa[5], id[5])}
               pret={pret[5]}
               adresa={adresa[5]}
             />
@@ -149,9 +154,10 @@ const Sells = () => {
           <section id="housecomerial">
             <h3>{t("house")}</h3>
             <Locuinta
+              id={id[6]}
               image={image}
               description={description}
-              selectLocuinta={() => selectLocuinta(pret[6], adresa[6])}
+              selectLocuinta={() => selectLocuinta(pret[6], adresa[6], id[6])}
               pret={pret[6]}
               adresa={adresa[6]}
             />
