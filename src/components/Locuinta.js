@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Locuinta.css";
 
-const Locuinta = ({ image, description, selectLocuinta, adresa, pret }) => {
+const Locuinta = ({ id, image, description, selectLocuinta, adresa, pret }) => {
   return (
     <div className="locuinta" onClick={selectLocuinta}>
       <img src={image} alt="garsoniera1" />

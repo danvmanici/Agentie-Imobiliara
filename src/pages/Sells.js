@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Sells-Rents.css";
 import Locuinta from "../components/Locuinta";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 
 const Sells = () => {
   const { t } = useTranslation();
@@ -18,10 +19,27 @@ const Sells = () => {
     "grigorescu",
     "centru",
   ];
+  const id = [0, 1, 2, 3, 4, 5, 6];
 
   const [help, setHelp] = useState(false);
   const [mypret, setMypret] = useState("");
   const [myadres, setMyadres] = useState("");
+  const [locuintaId, setLocuintaId] = useState("");
+  const [date, setDate] = useState("");
+
+  const handleSubmitAppointment = async () => {
+    const res = await axios.get(
+      `http://127.0.0.1:8000/appointment/${locuintaId}/${date}`,
+      {
+        params: {
+          locuintaId: locuintaId,
+          date: date,
+        },
+      }
+    );
+    alert(res.data);
+    console.log(locuintaId, date);
+  };
 
   const helper = () => {
     return (
@@ -37,19 +55,27 @@ const Sells = () => {
           type="datetime-local"
           id="meeting-time"
           name="meeting-time"
+          onChange={(e) => setDate(() => e.target.value)}
         ></input>
-        <input type="submit" value="Submit" />
+        <input
+          type="submit"
+          value="Submit"
+          onClick={(e) => {
+            e.preventDefault();
+            handleSubmitAppointment();
+          }}
+        />
       </form>
     );
   };
 
-  const selectLocuinta = (pret, adresa) => {
+  const selectLocuinta = (pret, adresa, id) => {
     if (!!sessionStorage.getItem("isLoggedIn", true)) {
       setMyadres(adresa);
       setMypret(pret);
+      setLocuintaId(id);
       setHelp(!help);
       helper();
-      console.log(pret, adresa);
     }
   };
 
@@ -62,9 +88,10 @@ const Sells = () => {
           <section id="garsonierezidential">
             <h3> {t("garsoniera")}</h3>
             <Locuinta
+              id={id[0]}
               image={image}
               description={description}
-              selectLocuinta={() => selectLocuinta(pret[0], adresa[0])}
+              selectLocuinta={() => selectLocuinta(pret[0], adresa[0], id[0])}
               pret={pret[0]}
               adresa={adresa[0]}
             />
