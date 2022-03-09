@@ -38,3 +38,29 @@
   flex-direction: column;
   border: 2px solid aquamarine;
 }
+
+.my-table {
+  position: fixed;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid aquamarine;
+}
+
+.scrollit {
+  overflow: scroll;
+  height: 120px;
+}
+
+.my-chart {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid aquamarine;
+  background-color: lightgrey;
+}

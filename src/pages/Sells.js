@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 import { getAppointments } from "../functions/getAppointments";
 import TabelProgramari from "../components/TabelProgramari";
+import ChartProgramari from "../components/ChartProgramari";
 
 const Sells = () => {
   const { t } = useTranslation();
@@ -33,6 +34,9 @@ const Sells = () => {
   //desenez tabelul de programari
   const [programare, setProgramare] = useState(false);
   const [programari, setProgramari] = useState([]);
+  //desenez chartjs
+  const [chartjs, setChartjs] = useState(false);
+  const [dataChart, setDataChart] = useState([]);
 
   //start creare programare
   const handleSubmitAppointment = async () => {
@@ -96,8 +100,26 @@ const Sells = () => {
   const selectCalendar = (id) => {
     console.log("cal", id);
   };
-  const selectGraph = (id) => {
-    console.log("graph", id);
+  const selectGraph = async (id) => {
+    let app = await getAppointments(id);
+
+    let newDate = new Date();
+    let currentMonth = newDate.getMonth();
+    app = app.filter((month) => Number(month.substring(5, 7)) === currentMonth);
+    const days = [];
+    const values = [];
+    for (const elem of app) {
+      days.push(elem.substring(8, 10));
+    }
+    for (let i = 1; i < 32; i++) {
+      let val = days.filter((v) => Number(v) === i).length;
+      values.push(val);
+    }
+    console.log("days", days);
+    console.log("values", values);
+    console.log(dataChart);
+    setDataChart(() => [...values]);
+    setChartjs(!chartjs);
   };
 
   return (
@@ -105,6 +127,7 @@ const Sells = () => {
       <main className="content-main">
         {help && helper()}
         {programare && <TabelProgramari programari={programari} />}
+        {chartjs && <ChartProgramari chartValues={dataChart} />}
         <article id="residential" className="content-type">
           <h1>{t("residential")}</h1>
           <section id="garsonierezidential">
