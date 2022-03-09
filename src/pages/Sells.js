@@ -3,6 +3,8 @@ import "./Sells-Rents.css";
 import Locuinta from "../components/Locuinta";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
+import { getAppointments } from "../functions/getAppointments";
+import TabelProgramari from "../components/TabelProgramari";
 
 const Sells = () => {
   const { t } = useTranslation();
@@ -26,7 +28,13 @@ const Sells = () => {
   const [myadres, setMyadres] = useState("");
   const [locuintaId, setLocuintaId] = useState("");
   const [date, setDate] = useState("");
+  // desenez butoanele
+  const role = sessionStorage.getItem("role");
+  //desenez tabelul de programari
+  const [programare, setProgramare] = useState(false);
+  const [programari, setProgramari] = useState([]);
 
+  //start creare programare
   const handleSubmitAppointment = async () => {
     const res = await axios.get(
       `http://127.0.0.1:8000/appointment/${locuintaId}/${date}`,
@@ -75,14 +83,28 @@ const Sells = () => {
       setMypret(pret);
       setLocuintaId(id);
       setHelp(!help);
-      helper();
     }
+  };
+  //end creare programare
+
+  const selectAppointments = async (id) => {
+    const app = await getAppointments(id);
+    setProgramari(() => [...app]);
+    setProgramare(!programare);
+  };
+
+  const selectCalendar = (id) => {
+    console.log("cal", id);
+  };
+  const selectGraph = (id) => {
+    console.log("graph", id);
   };
 
   return (
     <>
       <main className="content-main">
         {help && helper()}
+        {programare && <TabelProgramari programari={programari} />}
         <article id="residential" className="content-type">
           <h1>{t("residential")}</h1>
           <section id="garsonierezidential">
@@ -94,6 +116,10 @@ const Sells = () => {
               selectLocuinta={() => selectLocuinta(pret[0], adresa[0], id[0])}
               pret={pret[0]}
               adresa={adresa[0]}
+              role={role}
+              selectAppointments={() => selectAppointments(id[0])}
+              selectCalendar={() => selectCalendar(id[0])}
+              selectGraph={() => selectGraph(id[0])}
             />
             <Locuinta
               id={id[1]}
@@ -102,6 +128,10 @@ const Sells = () => {
               selectLocuinta={() => selectLocuinta(pret[1], adresa[1], id[1])}
               pret={pret[1]}
               adresa={adresa[1]}
+              role={role}
+              selectAppointments={() => selectAppointments(id[1])}
+              selectCalendar={() => selectCalendar(id[1])}
+              selectGraph={() => selectGraph(id[1])}
             />
           </section>
           <section id="apartmentrezidential">
@@ -113,6 +143,10 @@ const Sells = () => {
               selectLocuinta={() => selectLocuinta(pret[2], adresa[2], id[2])}
               pret={pret[2]}
               adresa={adresa[2]}
+              role={role}
+              selectAppointments={() => selectAppointments(id[2])}
+              selectCalendar={() => selectCalendar(id[2])}
+              selectGraph={() => selectGraph(id[2])}
             />
           </section>
           <section id="houserezidential">
@@ -124,6 +158,10 @@ const Sells = () => {
               selectLocuinta={() => selectLocuinta(pret[3], adresa[3], id[3])}
               pret={pret[3]}
               adresa={adresa[3]}
+              role={role}
+              selectAppointments={() => selectAppointments(id[3])}
+              selectCalendar={() => selectCalendar(id[3])}
+              selectGraph={() => selectGraph(id[3])}
             />
           </section>
         </article>
@@ -138,6 +176,10 @@ const Sells = () => {
               selectLocuinta={() => selectLocuinta(pret[4], adresa[4], id[4])}
               pret={pret[4]}
               adresa={adresa[4]}
+              role={role}
+              selectAppointments={() => selectAppointments(id[4])}
+              selectCalendar={() => selectCalendar(id[4])}
+              selectGraph={() => selectGraph(id[4])}
             />
           </section>
           <section id="apartmentcomerial">
@@ -149,6 +191,10 @@ const Sells = () => {
               selectLocuinta={() => selectLocuinta(pret[5], adresa[5], id[5])}
               pret={pret[5]}
               adresa={adresa[5]}
+              role={role}
+              selectAppointments={() => selectAppointments(id[5])}
+              selectCalendar={() => selectCalendar(id[5])}
+              selectGraph={() => selectGraph(id[5])}
             />
           </section>
           <section id="housecomerial">
@@ -160,6 +206,10 @@ const Sells = () => {
               selectLocuinta={() => selectLocuinta(pret[6], adresa[6], id[6])}
               pret={pret[6]}
               adresa={adresa[6]}
+              role={role}
+              selectAppointments={() => selectAppointments(id[6])}
+              selectCalendar={() => selectCalendar(id[6])}
+              selectGraph={() => selectGraph(id[6])}
             />
           </section>
         </article>

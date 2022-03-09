@@ -40,6 +40,7 @@ const NavBar = () => {
   const logOut = () => {
     sessionStorage.removeItem("isLoggedIn");
     sessionStorage.removeItem("user");
+    sessionStorage.removeItem("role");
   };
 
   const checkLogin = () => {

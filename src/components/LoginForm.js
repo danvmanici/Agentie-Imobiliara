@@ -24,6 +24,11 @@ const LoginForm = () => {
     if (!!res.data) {
       sessionStorage.setItem("user", JSON.stringify(res.data));
       sessionStorage.setItem("isLoggedIn", true);
+      if (res.data.role === "agent") {
+        sessionStorage.setItem("role", "agent");
+      } else {
+        sessionStorage.setItem("role", "client");
+      }
       window.location.href = "/user";
     }
     console.log(email, password);
