@@ -6,12 +6,14 @@ import axios from "axios";
 import { getAppointments } from "../functions/getAppointments";
 import TabelProgramari from "../components/TabelProgramari";
 import ChartProgramari from "../components/ChartProgramari";
+import CalendarProgramari from "../components/CalendarProgramari";
 
 const Sells = () => {
   const { t } = useTranslation();
   const image =
     "https://apartamentepallady.ro/wp-content/uploads/2017/04/tip1-1-1-1000x658.jpg";
   const description = t("description");
+
   const pret = [220, 280, 300, 400, 500, 199, 330];
   const adresa = [
     "zorilor",
@@ -37,6 +39,9 @@ const Sells = () => {
   //desenez chartjs
   const [chartjs, setChartjs] = useState(false);
   const [dataChart, setDataChart] = useState([]);
+  //desenez calendar
+  const [calendar, setCalendar] = useState(false);
+  const [dataCalendar, setDataCalendar] = useState([]);
 
   //start creare programare
   const handleSubmitAppointment = async () => {
@@ -97,8 +102,24 @@ const Sells = () => {
     setProgramare(!programare);
   };
 
-  const selectCalendar = (id) => {
+  const selectCalendar = async (id) => {
+    const app = await getAppointments(id);
+    const dateAppointment = [];
+    for (const elem of app) {
+      dateAppointment.push({
+        startDate: new Date(
+          Number(elem.substring(0, 4)),
+          Number(elem.substring(5, 7)) - 1,
+          Number(elem.substring(8, 10)),
+          Number(elem.substring(11, 13)),
+          Number(elem.substring(14, 16))
+        ),
+      });
+    }
+    setDataCalendar(() => [...dateAppointment]);
+    setCalendar(!calendar);
     console.log("cal", id);
+    console.log(dateAppointment);
   };
   const selectGraph = async (id) => {
     let app = await getAppointments(id);
@@ -115,9 +136,6 @@ const Sells = () => {
       let val = days.filter((v) => Number(v) === i).length;
       values.push(val);
     }
-    console.log("days", days);
-    console.log("values", values);
-    console.log(dataChart);
     setDataChart(() => [...values]);
     setChartjs(!chartjs);
   };
@@ -128,6 +146,7 @@ const Sells = () => {
         {help && helper()}
         {programare && <TabelProgramari programari={programari} />}
         {chartjs && <ChartProgramari chartValues={dataChart} />}
+        {calendar && <CalendarProgramari appointments={dataCalendar} />}
         <article id="residential" className="content-type">
           <h1>{t("residential")}</h1>
           <section id="garsonierezidential">
