@@ -13,11 +13,11 @@ const ContactForm = () => {
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
     const subject = document.querySelector("#subject").value;
-    // await axios.post("http://127.0.0.1:8000/send/", {
-    //   name: name,
-    //   email: email,
-    //   subject: subject,
-    // });
+    await axios.post("http://127.0.0.1:8000/send/", {
+      name: name,
+      email: email,
+      subject: subject,
+    });
     console.log(name, email, subject);
   };
 
