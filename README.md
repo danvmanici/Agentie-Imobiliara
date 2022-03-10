@@ -1,3 +1,14 @@
+#trimitere email django
+
+@api_view(['POST'])
+def postSend(request):
+print(request.body)
+body_unicode = request.body.decode('utf-8')
+body = json.loads(body_unicode)
+print(body['email'])
+send_mail(body['name'], body['subject'], 'danvmanici@gmail.com', ['danvmanici@gmail.com'], fail_silently=False)
+return Response("ok")
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
